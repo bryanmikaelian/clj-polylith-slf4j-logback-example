@@ -4,5 +4,11 @@
 
             :test {:extra-paths []}
 
+
+            :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                           org.clojure/tools.deps {:mvn/version "0.16.1281"}}
+                    :paths ["build/resources"]
+                    :ns-default build}
+
             :poly {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
                    :extra-deps {polylith/clj-poly {:mvn/version "0.2.20"}}}}}
