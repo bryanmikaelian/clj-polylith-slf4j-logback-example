@@ -1,2 +1,55 @@
 # clj-polylith-slf4j-logback-example
 A small demo with Clojure and Polylith showing how to configure SLF4J + Logback
+
+
+## Background
+
+This polylith workspace has one base: `server`. This base has logging configured with the following libraries:
+
+- `io.pedestal/pedestal.log`
+- `org.slf4j/slf4j-api`
+- `ch.qos.logback/logback-classic`
+
+It also configures a `development` project and `server` project that generates a `jar` artifact.
+
+In the development project, logback will use `resources/logback-test.xml` but in the jar file, we will use `bases/server/resources/logback.xml`
+
+
+## Requirements
+
+- Clojure 1.11
+- Java 21 (although it probably works with other LTS versions)
+- A working REPL
+
+
+## Demo
+
+### JAR File
+
+Using `clojure.tools.build`, we can generate a `jar` file like so
+
+
+```
+clj -T:build uberjar :project server
+```
+
+You should see the following output:
+
+```
+Compiling com.example.server.core...
+Building uberjar target/server.jar...
+Uberjar is built.
+```
+
+Run the jar like so and note how the `l/debug` statement is not printed
+
+```
+java -jar projects/server/target/server.jar
+````
+
+````
+INFO  com.example.server.core - {:msg "hello. I show up in production.", :line 10}
+ERROR com.example.server.core - {:msg "hello. I show up in production.", :line 11}
+WARN  com.example.server.core - {:msg "hello. I show up in production.", :line 12}
+```
+
