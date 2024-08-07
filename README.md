@@ -16,7 +16,7 @@ In the development project, logback will use `resources/logback-test.xml` but in
 
 The most important take away from all this:
 
-**logback.xml must at the top of the resources folder. It cannot be nested under something like bases/server/resources/server/logback.xml`**
+**logback.xml must at the top of the resources folder. It cannot be nested under something like `bases/server/resources/server/logback.xml`**
 
 
 ## Requirements
