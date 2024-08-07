@@ -47,7 +47,7 @@ Run the jar like so and note how the `l/debug` statement is not printed
 java -jar projects/server/target/server.jar
 ````
 
-````
+```
 INFO  com.example.server.core - {:msg "hello. I show up in production.", :line 10}
 ERROR com.example.server.core - {:msg "hello. I show up in production.", :line 11}
 WARN  com.example.server.core - {:msg "hello. I show up in production.", :line 12}
