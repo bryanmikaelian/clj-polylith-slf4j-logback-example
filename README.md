@@ -23,7 +23,7 @@ The most important take away from all this:
 
 - Clojure 1.11
 - Java 21 (although it probably works with other LTS versions)
-- A working REPL
+- A working REPL (this project used nrepl + conjure)
 
 
 ## Demo
@@ -55,5 +55,22 @@ java -jar projects/server/target/server.jar
 INFO  com.example.server.core - {:msg "hello. I show up in production.", :line 10}
 ERROR com.example.server.core - {:msg "hello. I show up in production.", :line 11}
 WARN  com.example.server.core - {:msg "hello. I show up in production.", :line 12}
+```
+
+
+### REPL
+Start a repl
+
+```
+clj -A:dev
+```
+
+You should see the following log output immediately. Note the `DEBUG` statement because our [development configuration allows for debug logs](https://github.com/bryanmikaelian/clj-polylith-slf4j-logback-example/blob/main/development/resources/logback-test.xml)
+
+```
+INFO  com.example.server.core - {:msg "hello. I show up in production.", :line 10}
+ERROR com.example.server.core - {:msg "hello. I show up in production.", :line 11}
+WARN  com.example.server.core - {:msg "hello. I show up in production.", :line 12}
+DEBUG com.example.server.core - {:msg "hello. I show up in development.", :line 13}
 ```
 
