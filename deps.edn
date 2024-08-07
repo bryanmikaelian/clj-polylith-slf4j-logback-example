@@ -1,6 +1,7 @@
-{:aliases  {:dev {:extra-paths ["development/src"]
+{:aliases  {:dev {:extra-paths ["development/src", "development/resources"]
 
-                  :extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}}}
+                  :extra-deps {poly/server {:local/root "bases/server"}
+                               org.clojure/clojure {:mvn/version "1.11.1"}}}
 
             :test {:extra-paths []}
 
